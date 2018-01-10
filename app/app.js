@@ -1,6 +1,6 @@
 var myApp = angular.module('App',[]);
 
-myApp.controller('myApp',function ($scope, $http) {
+myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
 
     $http.get('json/persons.json').then(function(response) {
       $scope.persons = response.data;
@@ -26,10 +26,10 @@ myApp.controller('myApp',function ($scope, $http) {
 
     $scope.maks = {
         name: 'Jon Doe',
-        email: 'jondoe@mail.ru'
+        address: 'jondoe@mail.ru'
     }
 
-});
+}]);
 
 
 
