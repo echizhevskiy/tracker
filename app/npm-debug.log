@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'start' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 verbose stack Error: EEXIST: file already exists, mkdir '/usr/bin/env'
+4 verbose stack     at Error (native)
+5 verbose cwd /home/echizhevsky/Downloads/tracker/app
+6 error Linux 4.10.0-42-generic
+7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "start"
+8 error node v4.2.6
+9 error npm  v3.5.2
+10 error path /usr/bin/env
+11 error code EEXIST
+12 error errno -17
+13 error syscall mkdir
+14 error EEXIST: file already exists, mkdir '/usr/bin/env'
+15 error File exists: /usr/bin/env
+16 error Move it away, and try again.
+17 verbose exit [ -17, true ]

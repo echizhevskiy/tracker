@@ -32,18 +32,6 @@ myApp.controller('myApp',function ($scope, $http) {
 });
 
 
-myApp.directive('myDir', function(){
-    return {
-        restrict: 'AECM',
-        templateUrl: 'directives/content.html',
-        replace: true,
-        scope: {
-          maksObject: "="
-        }
-    }
-});
-
-
 
 /* myApp.directive('myDir', function(){
     return {
