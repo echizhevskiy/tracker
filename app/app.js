@@ -2,8 +2,8 @@ var myApp = angular.module('App',[]);
 
 myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
 
-    $http.get('json/persons.json').then(function(response) {
-      $scope.persons = response.data;
+    $http.get('json/persons.json').success(function(response) {
+      $scope.persons = response;
     });
 
     $http.get('json/secondSprint.json').then(function(response){
@@ -14,15 +14,26 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
       $scope.ndates = response.data;
     });
 
-    $scope.firstSprint = 'Sprint 1';
-    $scope.secondSprint = 'Sprint 2';
-    $scope.thirdSprint = 'Sprint 3';
-    $scope.release = 'First release';
+    $scope.variables = {
+      firstSprint: 'Sprint 1',
+      secondSprint: 'Sprint 2',
+      thirdSprint: 'Sprint 3',
+      release: 'First release'
+    }
 
 
-    /* $scope.formattedAddress = function(persons){
+    $scope.formattedAddress = function(maks){
+      return maks.name + '  ' + maks.address;
+    }
+
+
+     $scope.formattedAddress1 = function(persons){
       return persons.developername + ', ' + persons.done;
-    } */
+    }
+
+
+    $scope.test =   $scope.persons;
+
 
     $scope.maks = {
         name: 'Jon Doe',

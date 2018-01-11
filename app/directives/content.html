@@ -1,1 +1,81 @@
-<div>{{personsObject}}</div>
+<div>
+
+
+  <p>Test --- -  {{personsObject.persons}}</p>
+
+
+  <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock"> {{variablesObject.release}}</button>
+    <div ng-show = "showBlock">
+          <button class="btn btn-success fa fa-address-card" ng-click="showfirstBlock = ! showfirstBlock"> {{variablesObject.firstSprint}}</button>
+              <div ng-show = "showfirstBlock">
+                      <table class="table table-striped">
+                        <thead>
+                           <tr>
+                             <th>Task number</th>
+                             <th>Developer Name</th>
+                             <th>Review Date</th>
+                             <th>Done</th>
+                           </tr>
+                         </thead>
+                         <tbody ng-repeat="person in persons">
+                           <tr>
+                             <td>{{person.tasknumber}}</td>
+                             <td>{{person.developername}}</td>
+                             <td>{{person.date}}</td>
+                             <td><input type="checkbox" ng-model="person.done"/> {{person.done}}</td>
+                           </tr>
+
+                        </tbody>
+                      </table>
+              </div>
+
+
+          <button class="btn btn-success fa fa-address-card" ng-click="showsecondBlock = ! showsecondBlock"> {{variablesObject.secondSprint}}</button>
+              <div ng-show = "showsecondBlock">
+                <table class="table table-striped">
+                  <thead>
+                     <tr>
+                       <th>Name</th>
+                       <th>Task number</th>
+                       <th>Review Date</th>
+                       <th>Done</th>
+                     </tr>
+                   </thead>
+                   <tbody ng-repeat="task in tasks">
+                     <tr>
+                       <td>{{task.tasknumber}}</td>
+                       <td>{{task.developername}}</td>
+                       <td>{{task.date}}</td>
+                       <td><input type="checkbox" ng-model="task.done"/>{{task.done}}</td>
+                     </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+          <button class="btn btn-success fa fa-address-card" ng-click="showthirdBlock = ! showthirdBlock"> {{variablesObject.thirdSprint}}</button>
+              <div ng-show = "showthirdBlock">
+                <table class="table table-striped">
+                  <thead>
+                     <tr>
+                       <th>Name</th>
+                       <th>Task number</th>
+                       <th>Review Date</th>
+                       <th>Done</th>
+                     </tr>
+                   </thead>
+                   <tbody ng-repeat="ndate in ndates">
+                     <tr>
+                       <td>{{ndate.tasknumber}}</td>
+                       <td>{{ndate.developername}}</td>
+                       <td>{{ndate.date}}</td>
+                       <td><input type="checkbox" ng-model="ndate.done"/>{{ndate.done}}</td>
+                     </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+
+    </div>
+</div>
