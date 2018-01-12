@@ -4,7 +4,8 @@ myApp.directive('myDir', function(){
         templateUrl: 'directives/content.html',
         replace: true,
         scope: {
-          persons: "="          
+          personsObject: "=",
+          getInfoFunction: "&"
         }
     }
 });

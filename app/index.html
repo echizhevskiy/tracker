@@ -19,13 +19,25 @@
 
 <body ng-app="App">
   <div ng-controller="myApp">
-<P>from index {{test}}</P>
-    <!-- <div ng-repeat="person in persons">{{person.developername}}</div> -->
-    <!-- <my-dir maks-object="maks" formatted-address-function="formattedAddress(amaks)" variables-object="variables"></my-dir> -->
-    <my-dir persons="test"></my-dir>
-  </div>
 
-<!-- <my-dir person-object = "persons" formatted-address-function="formattedAddress(apersons)"></my-dir> -->
+      <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock">Release</button>
+        <div ng-show = "showBlock">
+          <button class="btn btn-success fa fa-address-card"  ng-click="showfirstBlock = ! showfirstBlock ; getInfo('persons.json')">Sprint 1</button>
+                  <div ng-show = "showfirstBlock">
+                    <my-dir persons-object="persons"></my-dir>
+                  </div>
+          <button class="btn btn-success fa fa-address-card" ng-click="showsecondBlock = ! showsecondBlock; getInfo('secondSprint.json')">Sprint 2</button>
+                  <div ng-show = "showsecondBlock">
+                    <my-dir persons-object="persons"></my-dir>
+                  </div>
+          <button class="btn btn-success fa fa-address-card" ng-click="showthirdBlock = ! showthirdBlock; getInfo('thirdSprint.json')">Sprint 3</button>
+                  <div ng-show = "showthirdBlock">
+                    <my-dir persons-object="persons"></my-dir>
+                  </div>
+
+        </div>
+
+  </div>
 </body>
 
 </html>
