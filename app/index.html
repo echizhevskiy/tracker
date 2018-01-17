@@ -22,18 +22,43 @@
 
       <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock">Release</button>
         <div ng-show = "showBlock">
-          <button class="btn btn-success fa fa-address-card"  ng-click="showfirstBlock = ! showfirstBlock ; getInfo('persons.json')">Sprint 1</button>
+          <button class="btn btn-success fa fa-address-card" ng-init = "personscript = testHello()" ng-model = "personscript" ng-click="showfirstBlock = ! showfirstBlock">Sprint 1</button>
                   <div ng-show = "showfirstBlock">
-                    <my-dir persons-object="persons"></my-dir>
+                <!--    ------------ {{personscript}} ----------------- -->
+                    testobj-----------  {{ggg}} --------------testobj
+
+                    <p>
+                      <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal">New task</button>
+                          <div id="myModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Add new task to developer</h4>
+                                    <button class="close" type="button" data-dismiss="modal">×</button>
+                                  </div>
+                                        Developer name: <input class="form-control" ng-model="name"/>
+                                      <div class="modal-footer"><button class="btn btn-default" ng-click="addnewdeveloper(name)" type="button" data-dismiss="modal">Add</button></div>
+                                </div>
+                            </div>
+                          </div>
+
+                    </p>
+
+
+                    <my-dir developer-object="personscript"></my-dir>
+
                   </div>
-          <button class="btn btn-success fa fa-address-card" ng-click="showsecondBlock = ! showsecondBlock; getInfo('secondSprint.json')">Sprint 2</button>
+
+
+
+        <!--  <button class="btn btn-success fa fa-address-card" ng-click="showsecondBlock = ! showsecondBlock; getInfo('secondSprint.json')">Sprint 2</button>
                   <div ng-show = "showsecondBlock">
                     <my-dir persons-object="persons"></my-dir>
                   </div>
           <button class="btn btn-success fa fa-address-card" ng-click="showthirdBlock = ! showthirdBlock; getInfo('thirdSprint.json')">Sprint 3</button>
                   <div ng-show = "showthirdBlock">
                     <my-dir persons-object="persons"></my-dir>
-                  </div>
+                  </div> -->
 
         </div>
 
