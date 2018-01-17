@@ -1,7 +1,4 @@
 <div>
-
-  <!-- <p> Test variable of function: {{getInfoFunction({})}} </p> -->
-  <!-- <p>Test  -  {{personsObject[0].developername}}</p> -->
                       <table class="table table-striped">
                         <thead>
                            <tr>
@@ -11,10 +8,10 @@
                              <th>Done</th>
                            </tr>
                          </thead>
-                         <tbody ng-repeat="developer in personsObject">
+                         <tbody ng-repeat="developer in developerObject">
                            <tr>
                              <td>{{developer.tasknumber}}</td>
-                             <td>{{developer.developername}}</td>
+                             <td ng-model="developer.developername">{{developer.developername}}</td>
                              <td>{{developer.date}}</td>
                              <td><input type="checkbox" ng-model="developer.done"/> {{developer.done}}</td>
                            </tr>

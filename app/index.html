@@ -22,10 +22,10 @@
 
       <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock">Release</button>
         <div ng-show = "showBlock">
-          <button class="btn btn-success fa fa-address-card" ng-init = "personscript = testHello()" ng-model = "personscript" ng-click="showfirstBlock = ! showfirstBlock">Sprint 1</button>
+          <button class="btn btn-success fa fa-address-card" ng-init = "getInfoFromjson('persons.json')" ng-click="showfirstBlock = ! showfirstBlock">Sprint 1</button>
                   <div ng-show = "showfirstBlock">
                 <!--    ------------ {{personscript}} ----------------- -->
-                    testobj-----------  {{ggg}} --------------testobj
+                    testobj-----------   --------------testobj
 
                     <p>
                       <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#myModal">New task</button>
@@ -37,7 +37,10 @@
                                     <button class="close" type="button" data-dismiss="modal">×</button>
                                   </div>
                                         Developer name: <input class="form-control" ng-model="name"/>
-                                      <div class="modal-footer"><button class="btn btn-default" ng-click="addnewdeveloper(name)" type="button" data-dismiss="modal">Add</button></div>
+                                        Task name: <input class="form-control" ng-model="number"/>
+                                        Review date: <input class="form-control" ng-model="adate"/>
+                                        Done status: <input class="form-control" ng-model="status"/>
+                                      <div class="modal-footer"><button class="btn btn-default" ng-click="addnewdeveloper(name, number, adate, status)" type="button" data-dismiss="modal">Add</button></div>
                                 </div>
                             </div>
                           </div>
@@ -45,7 +48,7 @@
                     </p>
 
 
-                    <my-dir developer-object="personscript"></my-dir>
+                    <my-dir developer-object="persons"></my-dir>
 
                   </div>
 

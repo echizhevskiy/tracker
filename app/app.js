@@ -29,6 +29,15 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
    }
 
 
+   $scope.getInfoFromjson = function(filename){
+     $http.get('json/' + filename).success(function(response) {
+       $scope.persons = response;
+     });
+    return response;
+  }
+
+
+
    var testobj = [
      { "developername":"Ivan", "tasknumber" : "1.1", "date" : "27.01.2018", "done":true },
      { "developername":"Anton", "tasknumber" : "1.3", "date" : "01.02.2018", "done":false},
@@ -38,8 +47,8 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
 
    $scope.ggg = testobj;
 
-    $scope.addnewdeveloper = function(name){
-        $scope.ggg.push({developername: name, tasknumber: 1.8, date: 2, done: false});
+    $scope.addnewdeveloper = function(name, number, adate, status){
+        $scope.persons.push({developername: name, tasknumber: number, date: adate, done: status});
     }
 
 
