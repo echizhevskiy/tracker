@@ -3,17 +3,17 @@ var myApp = angular.module('App',[]);
 myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
     var response = {};
 
-    $scope.getInfo = function(filename){
+    setTimeout($scope.getInfo = function(filename){
       var obj = { content:null };
       var promise = $http.get('json/' + filename);
       promise.then(function(response) {
-          obj.content = response;
+          obj.content = response.data;
         //   $scope.persons = response;
-          console.log(response);
+          console.log(response.data);
           console.log(obj.content);
        });
       return obj.content;
-    }
+    }, 1000);
 
     $scope.testHello = function(){
      var obj1 = { content:null };

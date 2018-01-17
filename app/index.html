@@ -22,11 +22,11 @@
 
       <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock">Release</button>
         <div ng-show = "showBlock">
-          <button class="btn btn-success fa fa-address-card" ng-init = "personscript = testHello()" ng-model = "personscript" ng-click="showfirstBlock = ! showfirstBlock">Sprint 1</button>
+          <button class="btn btn-success fa fa-address-card" ng-init = "getInfo('persons.json')" ng-model = "personscript" ng-click="showfirstBlock = ! showfirstBlock">Sprint 1</button>
                   <div ng-show = "showfirstBlock">
                     ------------ {{personscript}} -----------------
 
-            
+
                     <my-dir developer-object="personscript"></my-dir>
 
                   </div>
