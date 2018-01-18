@@ -1,7 +1,4 @@
 <div>
-
-  <!-- <p> Test variable of function: {{getInfoFunction({})}} </p> -->
-  <!-- <p>Test  -  {{personsObject[0].developername}}</p> -->
                       <table class="table table-striped">
                         <thead>
                            <tr>
@@ -11,8 +8,8 @@
                              <th>Done</th>
                            </tr>
                          </thead>
-                         <tbody ng-repeat="developer in personsObject">
-                           <tr>
+                         <tbody>
+                           <tr ng-repeat="developer in developerObject">
                              <td>{{developer.tasknumber}}</td>
                              <td>{{developer.developername}}</td>
                              <td>{{developer.date}}</td>

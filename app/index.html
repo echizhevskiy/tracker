@@ -20,27 +20,14 @@
 <body ng-app="App">
   <div ng-controller="myApp">
 
-      <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock">Release</button>
+      <button class="btn btn-primary fa fa-address-card-o" ng-init="getInfo('persons.json')" ng-click = "showBlock = ! showBlock">Release</button>
         <div ng-show = "showBlock">
-          <button class="btn btn-success fa fa-address-card" ng-init = "getInfo('persons.json')" ng-model = "personscript" ng-click="showfirstBlock = ! showfirstBlock">Sprint 1</button>
-                  <div ng-show = "showfirstBlock">
-                    ------------ {{personscript}} -----------------
-
-
-                    <my-dir developer-object="personscript"></my-dir>
-
-                  </div>
-
-
-
-        <!--  <button class="btn btn-success fa fa-address-card" ng-click="showsecondBlock = ! showsecondBlock; getInfo('secondSprint.json')">Sprint 2</button>
-                  <div ng-show = "showsecondBlock">
-                    <my-dir persons-object="persons"></my-dir>
-                  </div>
-          <button class="btn btn-success fa fa-address-card" ng-click="showthirdBlock = ! showthirdBlock; getInfo('thirdSprint.json')">Sprint 3</button>
-                  <div ng-show = "showthirdBlock">
-                    <my-dir persons-object="persons"></my-dir>
-                  </div> -->
+          <div ng-repeat = "sprint in sprints">
+            <button class="btn btn-success fa fa-address-card" ng-click="showfirstBlock = ! showfirstBlock">{{sprint.namescript}}</button>
+                    <div ng-show = "showfirstBlock">
+                      <my-dir developer-object="sprint.tasks"></my-dir>
+                    </div>
+          </div>
 
         </div>
 
