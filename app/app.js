@@ -38,6 +38,9 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
 
 
 
+
+
+
    var testobj = [
      { "developername":"Ivan", "tasknumber" : "1.1", "date" : "27.01.2018", "done":true },
      { "developername":"Anton", "tasknumber" : "1.3", "date" : "01.02.2018", "done":false},
@@ -46,11 +49,11 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
    ];
 
    $scope.ggg = testobj;
+   
 
     $scope.addnewdeveloper = function(name, number, adate, status){
         $scope.persons.push({developername: name, tasknumber: number, date: adate, done: status});
+        $http.post('json/persons.json', {developername: name, tasknumber: number, date: adate, done: status});
     }
 
-
-    /*  $scope.a = getInfo('persons.json'); var aaaaaa = getIn  fo('persons.json'); */
 }]);
