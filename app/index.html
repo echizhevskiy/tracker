@@ -20,7 +20,7 @@
 <body ng-app="App">
   <div ng-controller="myApp">
 
-      <button class="btn btn-primary fa fa-address-card-o" ng-init="getInfo('persons.json')" ng-click = "showBlock = ! showBlock">Release</button>
+      <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock;getInfo('persons.json')">Release</button>
         <div ng-show = "showBlock">
           <div ng-repeat = "sprint in sprints">
             <button class="btn btn-success fa fa-address-card" ng-click="showfirstBlock = ! showfirstBlock">{{sprint.namescript}}</button>

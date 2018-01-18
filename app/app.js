@@ -1,8 +1,7 @@
 var myApp = angular.module('App',[]);
 
 myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
-    $scope.sprints = {tasks:null};
-  //  $scope.response = {tasks:null};
+    // $scope.sprints = {tasks:null};
 
     $scope.getInfo = function(filename){
       $http.get('json/' + filename).then(function(response) {
