@@ -20,9 +20,6 @@
 <body ng-app="App">
   <div ng-controller="myApp">
 
-
-<select-drop-down select-options="countriesList" selected-name="selectedName"></select-drop-down>
-
       <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock;getInfo('persons.json')">Release</button>
         <div ng-show = "showBlock">
           <div ng-repeat = "sprint in sprints">
@@ -53,7 +50,15 @@
                     </div>
           </div>
 
+
+
+          
+
+          <select-drop-down select-options="sprints" selected-name="selectedName"></select-drop-down>
+
+
         </div>
+
 
   </div>
 

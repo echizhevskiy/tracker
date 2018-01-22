@@ -20,7 +20,7 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
     }
 
 
-    $scope.countriesList = ["India", "Africa", "France"];
+    $scope.countriesList = ["India", "Africa", "France", "asas"];
     $scope.selectedName = "India";
 
 }]);
