@@ -19,4 +19,8 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
       });
     }
 
+
+    $scope.countriesList = ["India", "Africa", "France"];
+    $scope.selectedName = "India";
+
 }]);

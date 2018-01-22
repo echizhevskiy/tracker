@@ -1,0 +1,9 @@
+<div class = "select-drop-down body-container" ng-click="toggleOptions()">
+  <label>{{selectedName}}</label>
+  <ul ng-show="showOptions">
+    <li ng-repeat="option in selectOptions" ng-click="selectOption(option)">
+      <label>{{option}}</label>
+    </li>
+  </ul>
+
+</div>

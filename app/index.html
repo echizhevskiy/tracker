@@ -8,17 +8,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
-  <!-- <script src="bootstrap/jquery.min.js"></script> -->
   <script src="angular/angular.js"></script>
   <script src="angular/angular-resource.js"></script>
   <script src="app.js"></script>
   <script src="directives/myDir.directive.js"></script>
+  <script src="directives/dropdown.directive.js"></script>
 
 
 </head>
 
 <body ng-app="App">
   <div ng-controller="myApp">
+
+
+<select-drop-down select-options="countriesList" selected-name="selectedName"></select-drop-down>
+
       <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock;getInfo('persons.json')">Release</button>
         <div ng-show = "showBlock">
           <div ng-repeat = "sprint in sprints">
@@ -45,7 +49,6 @@
                             </div>
 
                       </p>
-
                       <my-dir developer-object="sprint.tasks"></my-dir>
                     </div>
           </div>

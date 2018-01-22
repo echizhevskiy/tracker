@@ -8,5 +8,4 @@ myApp.directive('myDir', function(){
           getInfoFunction: "&"
         }
     }
-
 });
