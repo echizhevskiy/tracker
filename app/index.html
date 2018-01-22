@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
-  <script src="bootstrap/jquery.min.js"></script>
+  <!-- <script src="bootstrap/jquery.min.js"></script> -->
   <script src="angular/angular.js"></script>
   <script src="angular/angular-resource.js"></script>
   <script src="app.js"></script>
@@ -24,6 +24,7 @@
           <div ng-repeat = "sprint in sprints">
             <button class="btn btn-success fa fa-address-card" ng-click="showfirstBlock = ! showfirstBlock">{{sprint.namescript}}</button>
                     <div ng-show = "showfirstBlock">
+
 
                       <p>
                         <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#{{sprint.id}}">New task for {{sprint.namescript}}</button>
