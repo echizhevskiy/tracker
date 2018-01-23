@@ -19,6 +19,72 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
       });
     }
 
+    $scope.menuLists = [
+      {
+        "id": 1,
+        "menu": "realease 1",
+        "submenu": [
+          {
+            'id': 1,
+            'name': "sprint-1.1",
+            'sprintsubmenu': [{
+              'id': 1,
+              'name': "sprint tasks 1.1.1"
+            },
+            {
+              'id': 2,
+              'name': "sprint tasks 1.1.2"
+            }
+            ]
+           },
+          {
+            'id': 2,
+            'name': "sprint-1.2",
+            'sprintsubmenu': [{
+              'id': 1,
+              'name': "sprint tasks 1.2.1"
+            },
+            {
+              'id': 2,
+              'name': "sprint tasks 1.2.2"
+            }
+          ]
+          }
+        ]
+      },
+      {
+        'id': 2,
+        "menu": "realease 2",
+        "submenu": [
+          {
+            'id': 1,
+            'name': "sprint-2.1",
+            'sprintsubmenu': [{
+              'id': 1,
+              'name': "sprint tasks 2.1.1"
+            },
+            {
+              'id': 2,
+              'name': "sprint tasks 2.1.2"
+            }
+            ]
+            },
+          {
+            'id': 2,
+            'name': "sprint-2.2",
+            'sprintsubmenu': [{
+              'id': 1,
+              'name': "sprint tasks 2.2.1"
+            },
+            {
+              'id': 2,
+              'name': "sprint tasks 2.2.2"
+            }
+            ]
+          }
+        ]
+      },
+    ];
 
     $scope.countriesList = ["India", "Africa", "France", "asas"];
     $scope.selectedName = "India";

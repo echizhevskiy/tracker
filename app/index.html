@@ -20,44 +20,56 @@
 <body ng-app="App">
   <div ng-controller="myApp">
 
-      <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock = ! showBlock;getInfo('persons.json')">Release</button>
-        <div ng-show = "showBlock">
-          <div ng-repeat = "sprint in sprints">
-            <button class="btn btn-success fa fa-address-card" ng-click="showfirstBlock = ! showfirstBlock">{{sprint.namescript}}</button>
-                    <div ng-show = "showfirstBlock">
+          <button class="btn btn-primary fa fa-address-card-o" ng-click = "showBlock1 = ! showBlock1;getInfo('persons.json')">Release</button>
+            <div ng-show="showBlock1">
 
-
-                      <p>
-                        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#{{sprint.id}}">New task for {{sprint.namescript}}</button>
-                            <div id="{{sprint.id}}" class="modal fade">
-                              <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Add new task to developer</h4>
-                                      <button class="close" type="button" data-dismiss="modal">×</button>
-                                    </div>
-                                          Developer name: <input class="form-control" ng-model="name"/>
-                                          Task name: <input class="form-control" ng-model="number"/>
-                                          Review date: <input class="form-control" ng-model="adate"/>
-                                          Done status: <input class="form-control" ng-model="status"/>
-                                        <div class="modal-footer"><button class="btn btn-default" ng-click="addnewdeveloper(name, number, adate, status, sprint.id)" type="button" data-dismiss="modal">Add</button></div>
+              <div ng-repeat="sprint in sprints">
+                <div ng-click="showBlock8 = ! showBlock8" >
+                  ----------- resr  -------------
+                  <select-drop-down select-options="sprint.namescript"></select-drop-down>
+                </div>
+                <div ng-show="showBlock8">
+                  <my-dir developer-object="sprint.tasks"></my-dir>
+                  <p>
+                      <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#{{sprint.id}}">New task for {{sprint.id}}</button>
+                          <div id="{{sprint.id}}" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Add new task to developer</h4>
+                                    <button class="close" type="button" data-dismiss="modal">×</button>
                                   </div>
-                              </div>
+                                        Developer name: <input class="form-control" ng-model="name"/>
+                                        Task name: <input class="form-control" ng-model="number"/>
+                                        Review date: <input class="form-control" ng-model="adate"/>
+                                        Done status: <input class="form-control" ng-model="status"/>
+                                      <div class="modal-footer"><button class="btn btn-default" ng-click="addnewdeveloper(name, number, adate, status, sprint.id)" data-dismiss="modal">Add</button></div>
+                                </div>
                             </div>
+                          </div>
 
-                      </p>
-                      <my-dir developer-object="sprint.tasks"></my-dir>
-                    </div>
+                    </p>
+                </div>
+
+              </div>
+
           </div>
 
+          <div ng-repeat="item in menuLists">
+            <button ng-click="showBlock13 = !showBlock13">{{item.menu}}</button>
+              <div ng-show="showBlock13">
+                <div ng-repeat="submenus in item.submenu">
+                  <select-drop-down select-options="submenus" select-menu="item.menu"></select-drop-down>
+                    <div ng-repeat = "podmenu in submenus.sprintsubmenu">
+                      <button ng-click="showBlock14 = !showBlock14">{{podmenu.name}}</button>
+                        <div ng-show="showBlock14">
+                            {{podmenu.id}}
+                        </div>
+                    </div>
 
-
-          
-
-          <select-drop-down select-options="sprints" selected-name="selectedName"></select-drop-down>
-
-
-        </div>
+                </div>
+              </div>
+          </div>
 
 
   </div>

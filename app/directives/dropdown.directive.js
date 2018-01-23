@@ -2,14 +2,16 @@ myApp.directive('selectDropDown', function(){
   return  {
     scope: {
         selectOptions: '=',
-        selectedName: '='
+        selectMenu: '=',
+        selectSubmenu: '='
     },
     transclude: true,
-    restrict: 'E',
+    restrict: 'AE',
     templateUrl: 'directives/dropdown.html',
     link: function(scope, element, attr){
-        scope.selectOption = function(option){
-          
+        scope.showOptions = false;
+        scope.toggleOptions = function(){
+            scope.showOptions = !scope.showOptions;
         }
     }
 
