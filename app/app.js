@@ -1,7 +1,7 @@
 
 var myApp = angular.module('App',[]);
 
-myApp.controller('myApp',['$scope', '$http', 'myService', function ($scope, $http, myService) {
+myApp.controller('myApp',['$scope', '$http', 'myService', function ($scope, $http, myService, countryservice) {
     $scope.getInfo = function(filename){
       $http.get('json/' + filename).then(function(response) {
         $scope.sprints = response.data;
@@ -20,7 +20,16 @@ myApp.controller('myApp',['$scope', '$http', 'myService', function ($scope, $htt
     }
 
 
-    $scope.testname = myService.getInfo();
+    $scope.testname = myService.sprints;
+
+    $scope.testname1 = myService.getInfo('persons.json');
+
+    $scope.test = myService.variablename;
+
+    countryservice.getallcountries().success(function(data) {
+       $scope.countries = data;
+    });
+
 
 }]);
 
@@ -29,10 +38,24 @@ myApp.service('myService',['$http', function($http){
 
   var serf = this;
   this.getInfo = function(filename){
-    $http.get('json/' + filename).then(function(response) {
-      this.sprints = response.data;
-     });
-     return serf.sprints;
+     return $http.get('json/' + filename).then(function(response) {
+       return response.data;
+      });
   }
 
+  $http.get('json/persons.json').then(function(response) {
+    this.sprints = response.data;
+    console.log(this.sprints);
+    this.variablename = this.sprints;
+    console.log(this.variablename);
+   });
+
+
 }]);
+
+
+myApp.service('countryservice', function ($http,countryservice) {
+  this.getallcountries = function () {
+      return $http.get('json/persons.json');
+  }
+});
