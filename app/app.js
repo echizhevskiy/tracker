@@ -1,7 +1,7 @@
 
 var myApp = angular.module('App',[]);
 
-myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
+myApp.controller('myApp',['$scope', '$http', 'myService', function ($scope, $http, myService) {
     $scope.getInfo = function(filename){
       $http.get('json/' + filename).then(function(response) {
         $scope.sprints = response.data;
@@ -18,5 +18,21 @@ myApp.controller('myApp',['$scope', '$http', function ($scope, $http) {
         data: {developername: name, tasknumber: number, date: adate, done: status}
       });
     }
+
+
+    $scope.testname = myService.getInfo();
+
+}]);
+
+
+myApp.service('myService',['$http', function($http){
+
+  var serf = this;
+  this.getInfo = function(filename){
+    $http.get('json/' + filename).then(function(response) {
+      this.sprints = response.data;
+     });
+     return serf.sprints;
+  }
 
 }]);
