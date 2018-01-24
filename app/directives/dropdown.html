@@ -1,8 +1,8 @@
 <div class = "body-container">
       <ul ng-repeat="menu in selectMenu">
-        <button ng-click="showBlock12 = !showBlock12">{{menu.menu}}</button>
+        <button class="btn btn-primary fa fa-address-card-o"  ng-click="showBlock12 = !showBlock12">{{menu.menu}}</button>
             <ul ng-show="showBlock12" ng-repeat="product in menu.sprints">
-              <button ng-click="showBlock13 = !showBlock13 ">{{product.name}}</button>
+              <button class="btn btn-success fa fa-address-card-o" ng-click="showBlock13 = !showBlock13 ">{{product.name}}</button>
                 <ul ng-show="showBlock13">
                   <my-dir developer-object="product.tasks"></my-dir> <!-- вызов директивы -->
                 </ul>
